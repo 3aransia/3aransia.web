@@ -18,9 +18,6 @@ function translate_text() {
     var parsedSourceText = sourceText.replace(new RegExp(" ", 'g'), '+');
     $.getJSON(CORS_ANYWHERE + TRANSLATION_API_ROUTE + parsedSourceText, function (result) {
         $.each(result, function (i, field) {
-            var textNode = document.createTextNode(i+ " " +JSON.stringify(field));
-            console.log(textNode) 
-            console.log(result) 
             $("#translation").append(field.arabian_word + " ");
         });
     });
