@@ -23,7 +23,7 @@ $(document).ready(function(){
 });
 
 function translate_moroccan() {
-    $("#transliteration").text("")
+    $("#transliteration-moroccan-arabic").text("")
     var sourceText = $("#source-text-moroccan").val()
     var parsedSourceText = sourceText.replace(new RegExp(" ", 'g'), '+');
     $.getJSON(CORS_ANYWHERE + BASE_API_ROUTE + ARABIC_TRANSLITERATION_API_ROUTE + parsedSourceText, function (result) {
@@ -32,7 +32,7 @@ function translate_moroccan() {
 } 
 
 function translate_moroccan_arabic() {
-    $("#transliteration").text("")
+    $("#transliteration-moroccan").text("")
     var sourceText = $("#source-text-moroccan-arabic").val()
     var parsedSourceText = sourceText.replace(new RegExp(" ", 'g'), '+');
     $.getJSON(CORS_ANYWHERE + BASE_API_ROUTE + MOROCCAN_TRANSLITERATION_API_ROUTE + parsedSourceText, function (result) {
