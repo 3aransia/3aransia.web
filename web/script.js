@@ -4,26 +4,34 @@ var ARABIC_TRANSLITERATION_API_ROUTE = "transliterate_moroccan_route/"
 var MOROCCAN_TRANSLITERATION_API_ROUTE = "transliterate_moroccan_arabic_route/"
 var CORS_ANYWHERE = "https://cors-anywhere.herokuapp.com/"
 
-
+// Transliterate on ready
 $(document).ready(function(){
-    translate_moroccan()
-    translate_moroccan_arabic()
+    transliterate_moroccan()
+    transliterate_moroccan_arabic()
 });
 
+// Transliterate on click
 $(document).ready(function(){
-    $('#translate-moroccan').click(function() {
-        translate_moroccan()
+    $('#transliterate-moroccan').click(function() {
+        transliterate_moroccan()
     });
 });
 
 $(document).ready(function(){
-    $('#translate-moroccan-arabic').click(function() {
-        translate_moroccan_arabic()
+    $('#transliterate-moroccan-arabic').click(function() {
+        transliterate_moroccan_arabic()
     });
 });
 
-function translate_moroccan() {
-    $("#transliteration-moroccan-arabic").text("")
+$(document).ready(function(){
+    $('#transliterate-moroccan-arabic').click(function() {
+        transliterate_moroccan_arabic()
+    });
+});
+
+// Translitetation function
+function transliterate_moroccan() {
+    $("#transliteration-moroccan-arabic").empty()
     var sourceText = $("#source-text-moroccan").val()
     var parsedSourceText = sourceText.replace(new RegExp(" ", 'g'), '+');
     $.getJSON(CORS_ANYWHERE + BASE_API_ROUTE + ARABIC_TRANSLITERATION_API_ROUTE + parsedSourceText, function (result) {
@@ -31,8 +39,8 @@ function translate_moroccan() {
     });
 } 
 
-function translate_moroccan_arabic() {
-    $("#transliteration-moroccan").text("")
+function transliterate_moroccan_arabic() {
+    $("#transliteration-moroccan").empty()
     var sourceText = $("#source-text-moroccan-arabic").val()
     var parsedSourceText = sourceText.replace(new RegExp(" ", 'g'), '+');
     $.getJSON(CORS_ANYWHERE + BASE_API_ROUTE + MOROCCAN_TRANSLITERATION_API_ROUTE + parsedSourceText, function (result) {
