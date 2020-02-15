@@ -23,12 +23,6 @@ $(document).ready(function(){
     });
 });
 
-$(document).ready(function(){
-    $('#transliterate-moroccan-arabic').click(function() {
-        transliterate_moroccan_arabic()
-    });
-});
-
 // Translitetation function
 function transliterate_moroccan() {
     $("#transliteration-moroccan-arabic").empty()
