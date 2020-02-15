@@ -1,7 +1,7 @@
 var BASE_API_ROUTE = "https://api3aransia.herokuapp.com/"
-var DEBUG_LINK = "http://127.0.0.1:5000/translate_arabic_moroccan/"
-var ARABIC_TRANSLITERATION_API_ROUTE = "translate_moroccan_arabic/"
-var MOROCCAN_TRANSLITERATION_API_ROUTE = "translate_arabic_moroccan/"
+var DEBUG_LINK = "http://127.0.0.1:5000/transliterate_moroccan_route/"
+var ARABIC_TRANSLITERATION_API_ROUTE = "transliterate_moroccan_route/"
+var MOROCCAN_TRANSLITERATION_API_ROUTE = "transliterate_arabic_moroccan_route/"
 var CORS_ANYWHERE = "https://cors-anywhere.herokuapp.com/"
 
 
