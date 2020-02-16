@@ -29,7 +29,7 @@ function transliterate_moroccan() {
     var sourceText = $("#source-text-moroccan").val()
     var parsedSourceText = sourceText.replace(new RegExp(" ", 'g'), '+');
     $.getJSON(CORS_ANYWHERE + BASE_API_ROUTE + ARABIC_TRANSLITERATION_API_ROUTE + parsedSourceText, function (result) {
-        $("#transliteration-moroccan-arabic").append(result.moroccan_transliteration);
+        $("#transliteration-moroccan-arabic").append(result.moroccan_arabic_transliteration);
     });
 } 
 
@@ -38,6 +38,6 @@ function transliterate_moroccan_arabic() {
     var sourceText = $("#source-text-moroccan-arabic").val()
     var parsedSourceText = sourceText.replace(new RegExp(" ", 'g'), '+');
     $.getJSON(CORS_ANYWHERE + BASE_API_ROUTE + MOROCCAN_TRANSLITERATION_API_ROUTE + parsedSourceText, function (result) {
-        $("#transliteration-moroccan").append(result.moroccan_arabic_transliteration);
+        $("#transliteration-moroccan").append(result.moroccan_transliteration);
     });
 } 
