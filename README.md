@@ -1,6 +1,6 @@
 # 3aransia.web
 
-Languages and Dialects transliteration 3aransia web application
+Transliteration of languages and dialects 3aransia web application
 
 ## Usage
 
