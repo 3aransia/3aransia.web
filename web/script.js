@@ -1,43 +1,37 @@
-var BASE_API_ROUTE = "https://api3aransia.herokuapp.com/"
-var DEBUG_LINK = "http://127.0.0.1:5000/transliterate_moroccan_route/"
-var ARABIC_TRANSLITERATION_API_ROUTE = "transliterate_moroccan_route/"
-var MOROCCAN_TRANSLITERATION_API_ROUTE = "transliterate_moroccan_arabic_route/"
-var CORS_ANYWHERE = "https://cors-anywhere.herokuapp.com/"
+var CORS_ANYWHERE = 'https://cors-anywhere.herokuapp.com/'
+var BASE_API_ROUTE = 'https://api3aransia.herokuapp.com/'
+var TRANSLITERATION_ROUTE = 'transliteration_route/'
+
+// API Parameters
+var TEXT_PARAMETER = '?text='
+var SOURCE_LANGUAGE_PARAMETER = '&source-language=ma'
+var TARGET_LANGUAGE_PARAMETER = '&target-language=ar'
 
 // Transliterate on ready
-$(document).ready(function(){
-    transliterate_moroccan()
-    transliterate_moroccan_arabic()
-});
+$(document).ready(function() {
+    transliterate()
+})
 
 // Transliterate on click
-$(document).ready(function(){
-    $('#transliterate-moroccan').click(function() {
-        transliterate_moroccan()
-    });
-});
-
-$(document).ready(function(){
-    $('#transliterate-moroccan-arabic').click(function() {
-        transliterate_moroccan_arabic()
-    });
-});
+$(document).ready(function() {
+    $('#transliterate').click(function() {
+        transliterate()
+    })
+})
 
 // Translitetation function
-function transliterate_moroccan() {
-    $("#transliteration-moroccan-arabic").empty()
-    var sourceText = $("#source-text-moroccan").val()
-    var parsedSourceText = sourceText.replace(new RegExp(" ", 'g'), '+');
-    $.getJSON(CORS_ANYWHERE + BASE_API_ROUTE + ARABIC_TRANSLITERATION_API_ROUTE + parsedSourceText, function (result) {
-        $("#transliteration-moroccan-arabic").append(result.moroccan_arabic_transliteration);
-    });
-} 
-
-function transliterate_moroccan_arabic() {
-    $("#transliteration-moroccan").empty()
-    var sourceText = $("#source-text-moroccan-arabic").val()
-    var parsedSourceText = sourceText.replace(new RegExp(" ", 'g'), '+');
-    $.getJSON(CORS_ANYWHERE + BASE_API_ROUTE + MOROCCAN_TRANSLITERATION_API_ROUTE + parsedSourceText, function (result) {
-        $("#transliteration-moroccan").append(result.moroccan_transliteration);
-    });
-} 
+function transliterate() {
+    $('#output-text').empty()
+    var sourceText = $('#source-text').val()
+    var parsedSourceText = sourceText.replace(new RegExp(' ', 'g'), '+')
+    $.getJSON(CORS_ANYWHERE +
+        BASE_API_ROUTE +
+        TRANSLITERATION_ROUTE +
+        TEXT_PARAMETER +
+        parsedSourceText +
+        SOURCE_LANGUAGE_PARAMETER +
+        TARGET_LANGUAGE_PARAMETER,
+        function(result) {
+            $('#output-text').append(result.transliteration)
+        })
+}
