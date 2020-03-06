@@ -14,7 +14,8 @@ $(document).ready(function() {
 
 // Transliterate on click
 $(document).ready(function() {
-    $('#transliterate').click(function() {
+    $('#source-text').keyup(function() {
+        $('#output-text').empty()
         transliterate()
     })
 })
