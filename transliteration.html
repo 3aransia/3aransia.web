@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>3aransia</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link rel="shortcut icon" type="image/ico" href="favicon.ico" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    <link href="static/style.css" rel="stylesheet" type="text/css">
+    <style>
+        body {
+            padding-top: 54px;
+        }
+        
+        @media (min-width: 992px) {
+            body {
+                padding-top: 56px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">3aransia</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+
+                    <!-- Transliteration -->
+                    <li class="nav-item">
+                        <a class="nav-link active" href="http://3aransia.com">Transliteration</a>
+                    </li>
+
+                    <!-- Documentation -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Documentation</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href='https://3aransia.github.io/3aransia/'>3aransia Documentation</a>
+                            <a class="dropdown-item" href="https://pypi.org/project/aaransia/">3aransia Python Library</a>
+                            <a class="dropdown-item" href='https://3aransia.github.io/3aransia.api/'>3aransia API</a>
+                        </div>
+                    </li>
+                    <!-- Donation link -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://paypal.me/pools/c/8n93o2W0c8">Donate</a>
+                    </li>
+                    <!-- Blog & About -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://3aransia.github.io/">Blog & About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col text-center">
+                <h1 class="mt-5">3aransia</h1>
+                <p class="lead">Transliteration of languages and dialects</p>
+                <a href="https://paypal.me/pools/c/8n93o2W0c8">Donate here</a>
+                <!-- Transliteration-->
+                <br/>
+                <br/>
+                <div class="row">
+                    <div class="col-sm-6 col-sm-push-6">
+                        <!-- Source language -->
+                        <p id="source-language">Moroccan</p>
+                        <div class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Source Language or Dialect</a>
+                            <div class="dropdown-menu" id="source-languages">
+                                <li class="dropdown-item" id="source-language-af">Afrikaans</li>
+                                <li class="dropdown-item" id="source-language-al">Algerian</li>
+                                <li class="dropdown-item" id="source-language-ar">Arabic</li>
+                                <li class="dropdown-item" id="source-language-az">Azerbaijani</li>
+                                <li class="dropdown-item" id="source-language-bo">Bosnian</li>
+                                <li class="dropdown-item" id="source-language-ca">Catalan</li>
+                                <li class="dropdown-item" id="source-language-co">Corsican</li>
+                                <li class="dropdown-item" id="source-language-cs">Czech</li>
+                                <li class="dropdown-item" id="source-language-cy">Welsh</li>
+                                <li class="dropdown-item" id="source-language-da">Danish</li>
+                                <li class="dropdown-item" id="source-language-de">German</li>
+                                <li class="dropdown-item" id="source-language-el">Greek</li>
+                                <li class="dropdown-item" id="source-language-en">English</li>
+                                <li class="dropdown-item" id="source-language-eo">Esperanto</li>
+                                <li class="dropdown-item" id="source-language-es">Spanish</li>
+                                <li class="dropdown-item" id="source-language-et">Estonian</li>
+                                <li class="dropdown-item" id="source-language-eu">Basque</li>
+                                <li class="dropdown-item" id="source-language-fa">Persian</li>
+                                <li class="dropdown-item" id="source-language-fi">Finnish</li>
+                                <li class="dropdown-item" id="source-language-fr">French</li>
+                                <li class="dropdown-item" id="source-language-fs">Frisian</li>
+                                <li class="dropdown-item" id="source-language-ga">Irish</li>
+                                <li class="dropdown-item" id="source-language-gc">Gaelic</li>
+                                <li class="dropdown-item" id="source-language-gl">Galician</li>
+                                <li class="dropdown-item" id="source-language-ha">Hausa</li>
+                                <li class="dropdown-item" id="source-language-hr">Croatian</li>
+                                <li class="dropdown-item" id="source-language-ht">Creole</li>
+                                <li class="dropdown-item" id="source-language-hu">Hungarian</li>
+                                <li class="dropdown-item" id="source-language-hw">Hawaiian</li>
+                                <li class="dropdown-item" id="source-language-id">Indonesian</li>
+                                <li class="dropdown-item" id="source-language-ig">Igbo</li>
+                                <li class="dropdown-item" id="source-language-is">Icelandic</li>
+                                <li class="dropdown-item" id="source-language-it">Italian</li>
+                                <li class="dropdown-item" id="source-language-ki">Kinyarwanda</li>
+                                <li class="dropdown-item" id="source-language-ku">Kurdish</li>
+                                <li class="dropdown-item" id="source-language-la">Latin</li>
+                                <li class="dropdown-item" id="source-language-li">Libyan</li>
+                                <li class="dropdown-item" id="source-language-lt">Lithuanian</li>
+                                <li class="dropdown-item" id="source-language-lu">Luxembourgish</li>
+                                <li class="dropdown-item" id="source-language-lv">Latvian</li>
+                                <li class="dropdown-item" id="source-language-ma">Moroccan</li>
+                                <li class="dropdown-item" id="source-language-mg">Malagasy</li>
+                                <li class="dropdown-item" id="source-language-mo">Maori</li>
+                                <li class="dropdown-item" id="source-language-ms">Malay</li>
+                                <li class="dropdown-item" id="source-language-mt">Maltese</li>
+                                <li class="dropdown-item" id="source-language-nl">Dutch</li>
+                                <li class="dropdown-item" id="source-language-no">Norwegian</li>
+                                <li class="dropdown-item" id="source-language-pl">Polish</li>
+                                <li class="dropdown-item" id="source-language-pt">Portuguese</li>
+                                <li class="dropdown-item" id="source-language-ro">Romanian</li>
+                                <li class="dropdown-item" id="source-language-sa">Samoan</li>
+                                <li class="dropdown-item" id="source-language-sh">Shona</li>
+                                <li class="dropdown-item" id="source-language-sk">Slovak</li>
+                                <li class="dropdown-item" id="source-language-sl">Slovenian</li>
+                                <li class="dropdown-item" id="source-language-so">Somali</li>
+                                <li class="dropdown-item" id="source-language-sq">Albanian</li>
+                                <li class="dropdown-item" id="source-language-ss">Sesotho</li>
+                                <li class="dropdown-item" id="source-language-su">Sundanese</li>
+                                <li class="dropdown-item" id="source-language-sv">Swedish</li>
+                                <li class="dropdown-item" id="source-language-sw">Swahili</li>
+                                <li class="dropdown-item" id="source-language-tl">Filipino</li>
+                                <li class="dropdown-item" id="source-language-tn">Tunisian</li>
+                                <li class="dropdown-item" id="source-language-tr">Turkish</li>
+                                <li class="dropdown-item" id="source-language-tu">Turkmen</li>
+                                <li class="dropdown-item" id="source-language-ur">Urdu</li>
+                                <li class="dropdown-item" id="source-language-uz">Uzbek</li>
+                                <li class="dropdown-item" id="source-language-vi">Vietnamese</li>
+                                <li class="dropdown-item" id="source-language-xh">Xhosa</li>
+                                <li class="dropdown-item" id="source-language-yo">Yoruba</li>
+                                <li class="dropdown-item" id="source-language-zu">Zulu</li>
+                            </div>
+                        </div>
+                        </br>
+                        <textarea id="source-text" type="text" placeholder="Enter text" name="textfield" class="form-control" rows=5>Salam 3alaikom !</textarea>
+                    </div>
+                    <div class="col-sm-6 col-sm-pull-6">
+                        <!-- Target language -->
+                        <p id="target-language">Arabic</p>
+                        <div class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Target Language or Dialect</a>
+                            <div class="dropdown-menu" id="target-languages">
+                                <li class="dropdown-item" id="target-language-af">Afrikaans</li>
+                                <li class="dropdown-item" id="target-language-al">Algerian</li>
+                                <li class="dropdown-item" id="target-language-ar">Arabic</li>
+                                <li class="dropdown-item" id="target-language-az">Azerbaijani</li>
+                                <li class="dropdown-item" id="target-language-bo">Bosnian</li>
+                                <li class="dropdown-item" id="target-language-ca">Catalan</li>
+                                <li class="dropdown-item" id="target-language-co">Corsican</li>
+                                <li class="dropdown-item" id="target-language-cs">Czech</li>
+                                <li class="dropdown-item" id="target-language-cy">Welsh</li>
+                                <li class="dropdown-item" id="target-language-da">Danish</li>
+                                <li class="dropdown-item" id="target-language-de">German</li>
+                                <li class="dropdown-item" id="target-language-el">Greek</li>
+                                <li class="dropdown-item" id="target-language-en">English</li>
+                                <li class="dropdown-item" id="target-language-eo">Esperanto</li>
+                                <li class="dropdown-item" id="target-language-es">Spanish</li>
+                                <li class="dropdown-item" id="target-language-et">Estonian</li>
+                                <li class="dropdown-item" id="target-language-eu">Basque</li>
+                                <li class="dropdown-item" id="target-language-fa">Persian</li>
+                                <li class="dropdown-item" id="target-language-fi">Finnish</li>
+                                <li class="dropdown-item" id="target-language-fr">French</li>
+                                <li class="dropdown-item" id="target-language-fs">Frisian</li>
+                                <li class="dropdown-item" id="target-language-ga">Irish</li>
+                                <li class="dropdown-item" id="target-language-gc">Gaelic</li>
+                                <li class="dropdown-item" id="target-language-gl">Galician</li>
+                                <li class="dropdown-item" id="target-language-ha">Hausa</li>
+                                <li class="dropdown-item" id="target-language-hr">Croatian</li>
+                                <li class="dropdown-item" id="target-language-ht">Creole</li>
+                                <li class="dropdown-item" id="target-language-hu">Hungarian</li>
+                                <li class="dropdown-item" id="target-language-hw">Hawaiian</li>
+                                <li class="dropdown-item" id="target-language-id">Indonesian</li>
+                                <li class="dropdown-item" id="target-language-ig">Igbo</li>
+                                <li class="dropdown-item" id="target-language-is">Icelandic</li>
+                                <li class="dropdown-item" id="target-language-it">Italian</li>
+                                <li class="dropdown-item" id="target-language-ki">Kinyarwanda</li>
+                                <li class="dropdown-item" id="target-language-ku">Kurdish</li>
+                                <li class="dropdown-item" id="target-language-la">Latin</li>
+                                <li class="dropdown-item" id="target-language-li">Libyan</li>
+                                <li class="dropdown-item" id="target-language-lt">Lithuanian</li>
+                                <li class="dropdown-item" id="target-language-lu">Luxembourgish</li>
+                                <li class="dropdown-item" id="target-language-lv">Latvian</li>
+                                <li class="dropdown-item" id="target-language-ma">Moroccan</li>
+                                <li class="dropdown-item" id="target-language-mg">Malagasy</li>
+                                <li class="dropdown-item" id="target-language-mo">Maori</li>
+                                <li class="dropdown-item" id="target-language-ms">Malay</li>
+                                <li class="dropdown-item" id="target-language-mt">Maltese</li>
+                                <li class="dropdown-item" id="target-language-nl">Dutch</li>
+                                <li class="dropdown-item" id="target-language-no">Norwegian</li>
+                                <li class="dropdown-item" id="target-language-pl">Polish</li>
+                                <li class="dropdown-item" id="target-language-pt">Portuguese</li>
+                                <li class="dropdown-item" id="target-language-ro">Romanian</li>
+                                <li class="dropdown-item" id="target-language-sa">Samoan</li>
+                                <li class="dropdown-item" id="target-language-sh">Shona</li>
+                                <li class="dropdown-item" id="target-language-sk">Slovak</li>
+                                <li class="dropdown-item" id="target-language-sl">Slovenian</li>
+                                <li class="dropdown-item" id="target-language-so">Somali</li>
+                                <li class="dropdown-item" id="target-language-sq">Albanian</li>
+                                <li class="dropdown-item" id="target-language-ss">Sesotho</li>
+                                <li class="dropdown-item" id="target-language-su">Sundanese</li>
+                                <li class="dropdown-item" id="target-language-sv">Swedish</li>
+                                <li class="dropdown-item" id="target-language-sw">Swahili</li>
+                                <li class="dropdown-item" id="target-language-tl">Filipino</li>
+                                <li class="dropdown-item" id="target-language-tn">Tunisian</li>
+                                <li class="dropdown-item" id="target-language-tr">Turkish</li>
+                                <li class="dropdown-item" id="target-language-tu">Turkmen</li>
+                                <li class="dropdown-item" id="target-language-ur">Urdu</li>
+                                <li class="dropdown-item" id="target-language-uz">Uzbek</li>
+                                <li class="dropdown-item" id="target-language-vi">Vietnamese</li>
+                                <li class="dropdown-item" id="target-language-xh">Xhosa</li>
+                                <li class="dropdown-item" id="target-language-yo">Yoruba</li>
+                                <li class="dropdown-item" id="target-language-zu">Zulu</li>
+                            </div>
+                        </div>
+                        </br>
+                        <textarea disabled id="output-text" type="text" placeholder="Output text" name="textfield" class="form-control" rows=5></textarea>
+                    </div>
+                </div>
+                </br>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add font awesome icons -->
+    <div class="text-center center-block">
+        <a href="mailto:3aransia@3aransia.com"><i id="social-em" class="fa fa-envelope fa-2x social"></i></a>
+        <a href="https://www.facebook.com/3aransia"><i id="social-fb" class="fa fa-facebook fa-2x social"></i></a>
+        <a href="https://www.twitter.com/3aransia"><i id="social-tw" class="fa fa-twitter fa-2x social"></i></a>
+        <a href="https://www.instagram.com/3aransia"><i id="social-ig" class="fa fa-instagram fa-2x social"></i></a>
+        <a href="https://www.github.com/3aransia"><i id="social-gh" class="fa fa-github fa-2x social"></i></a>
+        <a href="https://www.linkedin.com/company/28970133/"><i id="social-li" class="fa fa-linkedin fa-2x social"></i></a>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="static/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+</body>
+
+</html>
