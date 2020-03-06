@@ -1,5 +1,5 @@
 var CORS_ANYWHERE = 'https://cors-anywhere.herokuapp.com/'
-var BASE_API_ROUTE = 'https://api3aransia.herokuapp.com/'
+var BASE_API_ROUTE = 'https://app3aransia.herokuapp.com/'
 var TRANSLITERATION_ROUTE = 'transliteration_route/'
 
 // API Parameters
