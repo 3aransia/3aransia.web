@@ -41,3 +41,8 @@
 #social-li {
     color: #585858;
 }
+
+.dropdown-menu {
+    max-height: 400px;
+    overflow-y: auto;
+}

@@ -4,24 +4,41 @@ var TRANSLITERATION_ROUTE = 'transliteration_route/'
 
 // API Parameters
 var TEXT_PARAMETER = '?text='
-var SOURCE_LANGUAGE_PARAMETER = '&source-language=ma'
-var TARGET_LANGUAGE_PARAMETER = '&target-language=ar'
+var SOURCE_LANGUAGE_PARAMETER = '&source-language='
+var TARGET_LANGUAGE_PARAMETER = '&target-language='
+
+var sourceLanguage = 'ma'
+var targetLanguage = 'ar'
 
 // Transliterate on ready
 $(document).ready(function() {
     transliterate()
 })
 
-// Transliterate on click
+// Transliterate on keyup
 $(document).ready(function() {
     $('#source-text').keyup(function() {
-        $('#output-text').empty()
-        transliterate()
+        transliterate(sourceLanguage, targetLanguage)
     })
 })
 
+// Translitirate on source language change
+$('#source-languages').on('click', 'li', function() {
+    $('#source-language').text($(this).text());
+    sourceLanguage = $(this).attr('id').split("-")[2]
+    transliterate(sourceLanguage, targetLanguage)
+});
+
+// Translitirate on target language change
+$('#target-languages').on('click', 'li', function() {
+    $('#target-language').text($(this).text());
+    targetLanguage = $(this).attr('id').split("-")[2]
+    transliterate(sourceLanguage, targetLanguage)
+});
+
+
 // Translitetation function
-function transliterate() {
+function transliterate(sourceLanguage = 'ma', targetLanguage = 'ar') {
     $('#output-text').empty()
     var sourceText = $('#source-text').val()
     var parsedSourceText = sourceText.replace(new RegExp(' ', 'g'), '+')
@@ -31,7 +48,9 @@ function transliterate() {
         TEXT_PARAMETER +
         parsedSourceText +
         SOURCE_LANGUAGE_PARAMETER +
-        TARGET_LANGUAGE_PARAMETER,
+        sourceLanguage +
+        TARGET_LANGUAGE_PARAMETER +
+        targetLanguage,
         function(result) {
             $('#output-text').append(result.transliteration)
         })
