@@ -17,9 +17,9 @@ $(document).ready(function() {
 
 // Transliterate on keyup
 $(document).ready(function() {
-    $('#source-text').keyup(function() {
+    $('#source-text').keyup(delay(function() {
         transliterate(sourceLanguage, targetLanguage)
-    })
+    }, 500))
 })
 
 // Translitirate on source language change
@@ -54,4 +54,17 @@ function transliterate(sourceLanguage = 'ma', targetLanguage = 'ar') {
         function(result) {
             $('#output-text').append(result.transliteration)
         })
+}
+
+// delay function to wait for user input to stop
+function delay(callback, ms) {
+    var timer = 0;
+    return function() {
+        var context = this,
+            args = arguments;
+        clearTimeout(timer);
+        timer = setTimeout(function() {
+            callback.apply(context, args);
+        }, ms || 0);
+    };
 }
