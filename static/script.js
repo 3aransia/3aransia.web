@@ -39,7 +39,7 @@ $('#target-languages').on('click', 'li', function() {
 
 // Translitetation function
 function transliterate(sourceLanguage = 'ma', targetLanguage = 'ar') {
-    $('#output-text').empty()
+    $('#target-text').empty()
     var sourceText = $('#source-text').val()
     var parsedSourceText = sourceText.replace(new RegExp(' ', 'g'), '+')
     $.getJSON(CORS_ANYWHERE +
@@ -52,7 +52,7 @@ function transliterate(sourceLanguage = 'ma', targetLanguage = 'ar') {
         TARGET_LANGUAGE_PARAMETER +
         targetLanguage,
         function(result) {
-            $('#output-text').append(result.transliteration)
+            $('#target-text').append(result.transliteration)
         })
 }
 
@@ -67,4 +67,24 @@ function delay(callback, ms) {
             callback.apply(context, args);
         }, ms || 0);
     };
+}
+
+// Copy source to clipboard
+$('#clip-source').on('click', function() {
+    copyToClipboard("source-text");
+});
+
+// Copy target to clipboard
+$('#clip-target').on('click', function() {
+    copyToClipboard("target-text");
+});
+
+// Clip function
+function copyToClipboard(elementId) {
+    var aux = document.createElement("input");
+    aux.setAttribute("value", document.getElementById(elementId).innerHTML);
+    document.body.appendChild(aux);
+    aux.select();
+    document.execCommand("copy");
+    document.body.removeChild(aux);
 }
