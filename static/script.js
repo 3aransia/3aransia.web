@@ -7,8 +7,8 @@ var TEXT_PARAMETER = '?text='
 var SOURCE_LANGUAGE_PARAMETER = '&source-language='
 var TARGET_LANGUAGE_PARAMETER = '&target-language='
 
-var sourceLanguage = 'ma'
-var targetLanguage = 'ar'
+var sourceLanguageCode = 'ma'
+var targetLanguageCode = 'ar'
 
 // Transliterate on ready
 $(document).ready(function() {
@@ -18,28 +18,39 @@ $(document).ready(function() {
 // Transliterate on keyup
 $(document).ready(function() {
     $('#source-text').keyup(delay(function() {
-        transliterate(sourceLanguage, targetLanguage)
+        transliterate(sourceLanguageCode, targetLanguageCode)
     }, 500))
 })
 
 // Translitirate on source language change
 $('#source-languages').on('click', 'li', function() {
     $('#source-language').text($(this).text());
-    sourceLanguage = $(this).attr('id').split("-")[2]
-    transliterate(sourceLanguage, targetLanguage)
+    sourceLanguageCode = $(this).attr('id').split("-")[2]
+
+    var targetLanguage = $("#target-language").text()
+    targetLanguageCode = ALPHABETS[targetLanguage]
+    console.log(targetLanguageCode)
+    transliterate(sourceLanguageCode, targetLanguageCode)
 });
 
-// Translitirate on target language change
+console.log(ALPHABETS)
+    // Translitirate on target language change
 $('#target-languages').on('click', 'li', function() {
+    var sourceLanguage = $("#source-language").text()
+    sourceLanguageCode = ALPHABETS[sourceLanguage]
+
     $('#target-language').text($(this).text());
-    targetLanguage = $(this).attr('id').split("-")[2]
-    transliterate(sourceLanguage, targetLanguage)
+    targetLanguageCode = $(this).attr('id').split("-")[2]
+
+    console.log(sourceLanguage)
+    console.log(sourceLanguageCode)
+    transliterate(sourceLanguageCode, targetLanguageCode)
 });
 
 
 // Translitetation function
-function transliterate(sourceLanguage = 'ma', targetLanguage = 'ar') {
-    $('#output-text').empty()
+function transliterate(sourceLanguageCode = 'ma', targetLanguageCode = 'ar') {
+    $('#target-text').empty()
     var sourceText = $('#source-text').val()
     var parsedSourceText = sourceText.replace(new RegExp(' ', 'g'), '+')
     $.getJSON(CORS_ANYWHERE +
@@ -48,11 +59,11 @@ function transliterate(sourceLanguage = 'ma', targetLanguage = 'ar') {
         TEXT_PARAMETER +
         parsedSourceText +
         SOURCE_LANGUAGE_PARAMETER +
-        sourceLanguage +
+        sourceLanguageCode +
         TARGET_LANGUAGE_PARAMETER +
-        targetLanguage,
+        targetLanguageCode,
         function(result) {
-            $('#output-text').append(result.transliteration)
+            $('#target-text').text(result.transliteration)
         })
 }
 
@@ -67,4 +78,41 @@ function delay(callback, ms) {
             callback.apply(context, args);
         }, ms || 0);
     };
+}
+
+// Copy source to clipboard
+$('#clip-source').on('click', function() {
+    copyToClipboard("source-text");
+});
+
+// Copy target to clipboard
+$('#clip-target').on('click', function() {
+    copyToClipboard("target-text");
+});
+
+// Clip function
+function copyToClipboard(elementId) {
+    var aux = document.createElement("input");
+    aux.setAttribute("value", document.getElementById(elementId).innerHTML);
+    document.body.appendChild(aux);
+    aux.select();
+    document.execCommand("copy");
+    document.body.removeChild(aux);
+}
+
+// Swap source and target
+$('#swap').on('click', function() {
+    swap();
+});
+
+function swap() {
+    var sourceText = $("#source-text").text()
+    var targetText = $("#target-text").text()
+    $('#source-text').text(targetText)
+    $('#target-text').text(sourceText)
+
+    var sourceLanguage = $("#source-language").text()
+    var targetLanguage = $("#target-language").text()
+    $('#source-language').text(targetLanguage);
+    $('#target-language').text(sourceLanguage);
 }
