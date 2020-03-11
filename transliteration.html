@@ -100,7 +100,7 @@
                 <br/>
                 <br/>
                 <div class="row">
-                    <div class="col-sm-6 col-sm-push-6">
+                    <div class="col-sm-5 col-sm-push-5" id="source-language-div">
                         <!-- Source language -->
                         <p id="source-language">Moroccan</p>
                         <div class="dropdown">
@@ -182,7 +182,10 @@
                         <textarea id="source-text" type="text" placeholder="Enter text" name="textfield" class="form-control" rows=5>Salam 3alaikom !</textarea>
                         <button class="btn btn-link" id="clip-source"><img src="assets/clippy.svg" alt="Copy to clipboard" width="20" height="20"></button>
                     </div>
-                    <div class="col-sm-6 col-sm-pull-6">
+                    <div class="col-sm-2 col-sm-push-2">
+                        <button class="btn btn-link" id="swap"><img src="assets/swap.svg" alt="Copy to clipboard" width="20" height="20"></button>
+                    </div>
+                    <div class="col-sm-5 col-sm-pull-5" id="target-language-div">
                         <!-- Target language -->
                         <p id="target-language">Arabic</p>
                         <div class="dropdown">
@@ -261,7 +264,7 @@
                             </div>
                         </div>
                         </br>
-                        <textarea disabled id="target-text" type="text" placeholder="" name="textfield" class="form-control" rows=5></textarea>
+                        <textarea disabled id="target-text" type="text" placeholder="Result" name="textfield" class="form-control" rows=5></textarea>
                         <button class="btn btn-link" id="clip-target"><img src="assets/clippy.svg" alt="Copy to clipboard" width="20" height="20"></button>
                     </div>
                 </div>
@@ -282,6 +285,7 @@
 
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="static/constants.js"></script>
     <script src="static/script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
